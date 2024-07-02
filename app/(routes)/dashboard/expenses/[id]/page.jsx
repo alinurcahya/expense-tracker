@@ -57,8 +57,6 @@ function ExpensesScreen({ params }) {
       .where(eq(Expenses.budgetId, params.id))
       .orderBy(desc(Expenses.id));
     setExpensesList(result);
-
-    console.log(result);
   };
 
   const deleteBudget = async () => {
@@ -72,7 +70,6 @@ function ExpensesScreen({ params }) {
         .delete(Budgets)
         .where(eq(Budgets.id, params.id))
         .returning();
-      console.log(result);
       if (result) {
         toast("Expense Deleted!");
         route.replace("/dashboard/budgets");

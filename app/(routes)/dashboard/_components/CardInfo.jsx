@@ -8,7 +8,6 @@ function CardInfo({ budgetList }) {
     budgetList && CalculateCardInfo();
   }, [budgetList]);
   const CalculateCardInfo = () => {
-    console.log(budgetList);
     let totalBudget_ = 0;
     let totalSpend_ = 0;
     budgetList.forEach((element) => {
